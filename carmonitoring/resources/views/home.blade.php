@@ -8,6 +8,10 @@
                 <div class="card-header">{{ __('Dashboard') }}</div>
 
                 <div class="card-body">
+                    masuk user <div>{{ Auth::user()->name }}</div>
+                    @role('admin')
+                    tes
+                    @endrole
                     @if (session('status'))
                         <div class="alert alert-success" role="alert">
                             {{ session('status') }}

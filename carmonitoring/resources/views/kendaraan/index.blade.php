@@ -61,12 +61,6 @@
                                     <a class="dropdown-item" href="{{ route('kendaraan.index') }}">
                                         {{ __('Kendaraan') }}
                                     </a>
-                                    <a class="dropdown-item" href="{{ route('kendaraan.index') }}">
-                                        {{ __('Monitoring') }}
-                                    </a>
-                                    <a class="dropdown-item" href="{{ route('kendaraan.index') }}">
-                                        {{ __('Monitoring') }}
-                                    </a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -87,6 +81,35 @@
         <main class="py-4">
             @yield('content')
         </main>
+    </div>
+    <div class="container">
+        <div class="justify-content-end">
+            <a href="{{route('kendaraan.create')}}" class="btn btn-success">Pemesanan Kendaraan</a>
+            <table class="table">
+                <thead>
+                    <tr class="fw-bold">
+                        <td>No</td>
+                        <td>Driver</td>
+                        <td>Nama Kendaraan</td>
+                        <td>Plat Nomor</td>
+                        <td>Status Pemesanan</td>
+                        <td>Pihak Yang Menyetujui</td>
+                        <td>Aksi</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1.</td>
+                        <td>Bagus</td>
+                        <td>Marcedes</td>
+                        <td>P 1029</td>
+                        <td>Disetujui</td>
+                        <td>Hasan</td>
+                        <td><a href="" class="btn btn-primary">Edit</a><a href="" class="btn btn-danger">Delete</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 </body>
 </html>
