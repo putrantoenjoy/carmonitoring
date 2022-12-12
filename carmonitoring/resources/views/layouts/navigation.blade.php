@@ -1,4 +1,4 @@
-<!doctype html>
+{{-- <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
@@ -40,10 +40,6 @@
         .sidenav a:hover {
         color: #f1f1f1;
         }
-        /* @media screen and (max-height: 450px) {
-        .sidenav {padding-top: 15px;}
-        .sidenav a {font-size: 18px;}
-        } */
     </style>
 </head>
 <body>
@@ -55,7 +51,6 @@
             <a href="{{route('kendaraan.index')}}" class="h5">Data Kendaraan</a>
             <a href="{{route('pemesanan.index')}}" class="h5">Pemesanan</a>
             <a href="#riwayat" class="h5">Riwayat</a>
-            {{-- <a href="#contact" class="h5">Keluar</a> --}}
             <a class="h5" href="{{ route('logout') }}"
                 onclick="event.preventDefault();
                                 document.getElementById('logout-form').submit();">
@@ -66,10 +61,24 @@
                 @csrf
             </form>
         </nav>
-{{-- 
-        <main class="py-4">
-            @yield('content')
-        </main> --}}
     </div>
 </body>
-</html>
+</html> --}}
+
+<nav class="sidenav p-3">
+    <div class="d-flex justify-content-center m-3">
+        <a href="#about" class="h2 fw-bold text-white text-center">MonitoringApp</a>
+    </div>
+    <a href="{{route('kendaraan.index')}}" class="h5">Data Kendaraan</a>
+    <a href="{{route('pemesanan.index')}}" class="h5">Pemesanan</a>
+    <a href="#riwayat" class="h5">Riwayat</a>
+    <a class="h5" href="{{ route('logout') }}"
+        onclick="event.preventDefault();
+                        document.getElementById('logout-form').submit();">
+        {{ __('Keluar') }}
+    </a>
+
+    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+        @csrf
+    </form>
+</nav>
