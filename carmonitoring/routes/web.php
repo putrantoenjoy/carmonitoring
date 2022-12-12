@@ -24,3 +24,5 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::resource('/home/kendaraan', KendaraanController::class);
 Route::resource('/home/pemesanan', PemesananKendaraanController::class);
+Route::patch('/home/pemesanan/status/{id}/', [PemesananKendaraanController::class, 'setuju'])->name('pemesanan.setuju');
+Route::patch('/home/pemesanan/tolak/{id}/', [PemesananKendaraanController::class, 'tolak'])->name('pemesanan.tolak');

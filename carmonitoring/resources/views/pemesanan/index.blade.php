@@ -12,7 +12,7 @@
                 <thead>
                     <tr class="fw-bold">
                         <td>No</td>
-                        <td>Driverr</td>
+                        <td>Driver</td>
                         <td>Nama Kendaraan</td>
                         <td>Plat Nomor</td>
                         <td>Jadwal</td>
@@ -43,12 +43,26 @@
                                 @endrole --}}
                                 @role('admin')
                                 <a href="" class="btn btn-secondary">Diproses</a>
+                                @else
+                                <div class="d-flex">
+                                    <form action="{{route('pemesanan.setuju', $allpemesanan->id)}}" method="post">
+                                        @csrf
+                                        @method('patch')
+                                        <button type="submit" class="btn btn-success">Setuju</button>
+                                    </form>
+                                    <form action="{{route('pemesanan.tolak', $allpemesanan->id)}}" method="post">
+                                        @csrf
+                                        @method('patch')
+                                        <button type="submit" class="btn btn-danger">Tolak</button>
+                                    </form>
+                                </div>
+                                {{-- <a href="{{route('pemesanan.tolak', $allpemesanan->id)}}" class="btn btn-danger">Tolak</a> --}}
                                 @endrole
                                 @elseif($allpemesanan->status == "disetujui")
                                 {{-- {{$allpemesanan->status}} --}}
                                 <a class="btn btn-success disabled">Disetujui</a>
                                 @else
-                                <a class="btn btn-success disabled">Ditolak</a>
+                                <a class="btn btn-danger disabled">Ditolak</a>
                                 @endif
                             </td>
                         </tr>

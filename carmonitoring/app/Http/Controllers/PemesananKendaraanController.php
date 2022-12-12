@@ -98,4 +98,22 @@ class PemesananKendaraanController extends Controller
     {
         //
     }
+    public function setuju($id)
+    {
+        //
+        $setuju = Pemesanankendaraan::find($id);
+        $setuju->status = "disetujui";
+        $setuju->update();
+
+        return redirect()->route('pemesanan.index');
+    }
+    public function tolak($id)
+    {
+        //
+        $setuju = Pemesanankendaraan::find($id);
+        $setuju->status = "ditolak";
+        $setuju->update();
+
+        return redirect()->route('pemesanan.index');
+    }
 }

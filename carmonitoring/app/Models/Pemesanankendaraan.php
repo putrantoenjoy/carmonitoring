@@ -9,7 +9,7 @@ class Pemesanankendaraan extends Model
 {
     use HasFactory;
 
-    protected $fillable  = ['nama_kendaraan','plat_nomor', 'kepemilikan', 'jenis_kendaraan'];
+    protected $fillable  = ['driver', 'jadwal_service', 'status'];
     public function Kendaraan(){
         return $this->belongsTo(Kendaraan::class);
     }
