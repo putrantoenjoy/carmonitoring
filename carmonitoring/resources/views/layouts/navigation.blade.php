@@ -69,6 +69,7 @@
     <div class="d-flex justify-content-center m-3">
         <a href="{{route('home')}}" class="h2 fw-bold text-white text-center">MonitoringApp</a>
     </div>
+    <a class="text-white disabled">{{Auth::user()->name}}</a>
     @role('admin')
     <a href="{{route('kendaraan.index')}}" class="h5">Data Kendaraan</a>
     @endrole
