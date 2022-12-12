@@ -84,8 +84,11 @@
     </div>
     <div class="container">
         <div class="justify-content-end">
-            <a href="{{route('kendaraan.create')}}" class="btn btn-success">Pemesanan Kendaraan</a>
-            <table class="table">
+            <div class="d-flex justify-content-between">
+                <a href="{{route('kendaraan.create')}}" class="btn btn-success">Tambah Kendaraan</a>
+                <a href="{{route('kendaraan.create')}}" class="btn btn-success">Pemesanan Kendaraan</a>
+            </div>
+            <table class="table my-3 border border-dark">
                 <thead>
                     <tr class="fw-bold">
                         <td>No</td>
