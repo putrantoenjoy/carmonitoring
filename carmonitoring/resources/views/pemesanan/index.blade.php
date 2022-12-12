@@ -12,7 +12,7 @@
                 <thead>
                     <tr class="fw-bold">
                         <td>No</td>
-                        <td>Driver</td>
+                        <td>Driverr</td>
                         <td>Nama Kendaraan</td>
                         <td>Plat Nomor</td>
                         <td>Jadwal</td>
