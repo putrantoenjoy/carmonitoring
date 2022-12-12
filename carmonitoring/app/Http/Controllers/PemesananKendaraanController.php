@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Kendaraan;
+use App\Models\Pemesanankendaraan;
 
 class PemesananKendaraanController extends Controller
 {
@@ -14,8 +16,9 @@ class PemesananKendaraanController extends Controller
     public function index()
     {
         //
-        
-        return view('pemesanan.index');
+        $pemesanan = Pemesanankendaraan::with('kendaraan')->get();
+
+        return view('pemesanan.index', compact('pemesanan'));
     }
     
     /**
@@ -26,7 +29,8 @@ class PemesananKendaraanController extends Controller
     public function create()
     {
         //
-        return view('pemesanan.create');
+        $kendaraan = Kendaraan::all();
+        return view('pemesanan.create', compact('kendaraan'));
         
     }
 
@@ -39,6 +43,15 @@ class PemesananKendaraanController extends Controller
     public function store(Request $request)
     {
         //
+        $pemesanan = new Pemesanankendaraan();
+        $pemesanan->kendaraan_id = $request->kendaraan;
+        $pemesanan->driver = $request->driver;
+        $pemesanan->jadwal_service = $request->jadwal;
+        // $pemesanan->status = $request->statuspemesanan;
+        $pemesanan->status = "diproses";
+        $pemesanan->save();
+        
+        return redirect()->route('pemesanan.index');
     }
 
     /**

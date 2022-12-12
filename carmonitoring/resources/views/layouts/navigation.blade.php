@@ -67,11 +67,15 @@
 
 <nav class="sidenav p-3">
     <div class="d-flex justify-content-center m-3">
-        <a href="#about" class="h2 fw-bold text-white text-center">MonitoringApp</a>
+        <a href="{{route('home')}}" class="h2 fw-bold text-white text-center">MonitoringApp</a>
     </div>
+    @role('admin')
     <a href="{{route('kendaraan.index')}}" class="h5">Data Kendaraan</a>
+    @endrole
     <a href="{{route('pemesanan.index')}}" class="h5">Pemesanan</a>
+    @role('admin')
     <a href="#riwayat" class="h5">Riwayat</a>
+    @endrole
     <a class="h5" href="{{ route('logout') }}"
         onclick="event.preventDefault();
                         document.getElementById('logout-form').submit();">

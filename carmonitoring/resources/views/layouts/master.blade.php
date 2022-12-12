@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 @include('layouts.top')
+@include('layouts.grafik')
 <body>
     <div id="app">
         @include('layouts.navigation')
@@ -8,6 +9,5 @@
             @yield('content')
         </main>
     </div>
-    @include('layouts.bottom')
 </body>
 </html>

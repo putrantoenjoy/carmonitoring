@@ -15,7 +15,7 @@ class CreatePemesanankendaraansTable extends Migration
     {
         Schema::create('pemesanankendaraans', function (Blueprint $table) {
             $table->id();
-            $table->string('id_kendaraan');
+            $table->foreignId('kendaraan_id');
             $table->string('driver');
             $table->string('jadwal_service');
             $table->string('status');
