@@ -3,9 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Kendaraan;
 
-class KendaraanController extends Controller
+class PemesananKendaraanController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,10 +14,10 @@ class KendaraanController extends Controller
     public function index()
     {
         //
-        $kendaraan = Kendaraan::all();
-        return view('kendaraan.index', compact('kendaraan'));
+        
+        return view('pemesanan.index');
     }
-
+    
     /**
      * Show the form for creating a new resource.
      *
@@ -27,7 +26,8 @@ class KendaraanController extends Controller
     public function create()
     {
         //
-        return view('kendaraan.create');
+        return view('pemesanan.create');
+        
     }
 
     /**
@@ -39,14 +39,6 @@ class KendaraanController extends Controller
     public function store(Request $request)
     {
         //
-        $kendaraan = new Kendaraan();
-        $kendaraan->nama_kendaraan = $request->namakendaraan;
-        $kendaraan->plat_nomor = $request->platnomor;
-        $kendaraan->kepemilikan = $request->kepemilikan;
-        $kendaraan->jenis_kendaraan =  $request->jenis_kendaraan;
-        $kendaraan->save();
-        
-        return redirect()->route('kendaraan.index');
     }
 
     /**

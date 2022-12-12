@@ -14,8 +14,14 @@
                 <label for="kepemilikan">Kepemilikan</label>
                 <select class="form-control bg-white" name="kepemilikan" id="kepemilikan">
                     <option value="" selected hidden disabled>Pilih Kepemilikan</option>
-                    <option value="1">perusahaan sendiri</option>
-                    <option value="2">bukan perusahaan sendiri</option>
+                    <option value="perusahaan sendiri">perusahaan sendiri</option>
+                    <option value="bukan perusahaan sendiri">bukan perusahaan sendiri</option>
+                </select>
+                <label for="jeniskendaraan">Jenis Kendaraan</label>
+                <select class="form-control bg-white" name="jenis_kendaraan" id="jeniskendaraan">
+                    <option value="" selected hidden disabled>Pilih Jenis Kendaraan</option>
+                    <option value="Angkutan Orang">Angkutan Orang</option>
+                    <option value="Angkutan Barang">Angkutan Barang</option>
                 </select>
             </div>
             <div class="row m-3 col-md-6">
