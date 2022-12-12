@@ -74,7 +74,7 @@
     @endrole
     <a href="{{route('pemesanan.index')}}" class="h5">Pemesanan</a>
     @role('admin')
-    <a href="#riwayat" class="h5">Laporan</a>
+    <a href="#riwayat" class="h5">Log</a>
     @endrole
     <a class="h5" href="{{ route('logout') }}"
         onclick="event.preventDefault();

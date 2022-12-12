@@ -4,7 +4,7 @@ window.onload = function() {
 
 var options = {
 	title: {
-		text: "Kendaraan"
+		text: "Pemakaian Kendaraan"
 	},
 	data: [{
 			type: "pie",
@@ -13,8 +13,8 @@ var options = {
 			indexLabel: "{label} ({y})",
 			yValueFormatString:"#,##0.#"%"",
 			dataPoints: [
-				{ label: "Angkutan Orang", y: 36 },
-				{ label: "Angkutan Barang", y: 31 },
+				{ label: "kendaraan pengangkut orang", y: 3 },
+				{ label: "kendaraan pengangkut barang", y: 1 },
 			]
 	}]
 };
